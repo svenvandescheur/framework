@@ -1,3 +1,10 @@
+/* ==========================================================================
+   Grid system lib
+   ========================================================================== */
+
+/**
+ * Box sizing mixins
+ */
 .content-box {
   box-sizing: content-box;
   -moz-box-sizing: content-box; /* Firefox */
@@ -10,6 +17,9 @@
   -webkit-box-sizing: border-box; /* Safari */
 }
 
+/**
+ * Columns and rows
+ */
 .cols (@cols: 1, @type: width) when (@type = width) {
   width: @cols * @column-width;
 }
@@ -34,6 +44,9 @@
   max-height: @rows * @row-height;
 }
 
+/**
+ * Margin and padding
+ */
 .hmargin (@guttercount-left: 1, @guttercount-right: 1) {
   margin-left: @guttercount-left * @column-width;
   margin-right: @guttercount-right * @column-width;
@@ -54,11 +67,17 @@
   padding-bottom: @padding-bottom * @row-height;
 }
 
+/**
+ * Align center
+ */
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
+/**
+ * Transformations
+ */
 .origin (@h: 50, @v: 50) {
   transform-origin: @h * 1% @v * 1%;
   -ms-transform-origin: @h * 1% @v * 1%; /* IE 9 */
