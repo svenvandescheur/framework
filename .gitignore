@@ -1,0 +1,5 @@
+# Prevent IDE files
+.idea/
+
+# Prevent compiled css files
+.css
