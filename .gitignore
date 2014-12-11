@@ -2,4 +2,4 @@
 .idea/
 
 # Prevent compiled css files
-.css
+*.css
