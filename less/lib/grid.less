@@ -6,8 +6,11 @@
  * Settings
  */
 @column-count: 12;
-@column-width: 100%/@column-count;
-@row-height: 44px;
+@column-width: 100% / @column-count;
+@fixed-grid-size: 1200px;
+@fixed-grid-column-count: 12px;
+@fixed-grid-column-width: @fixed-grid-size / @fixed-grid-column-count;
+@row-height: 30px;
 
 
 /**
@@ -29,50 +32,38 @@
 /**
  * Columns and rows
  */
-.cols (@cols: 1, @type: width) when (@type = width) {
-  width: @cols * @column-width;
+.cols(@cols: 1, @type: width) {
+  @{type}: @cols * @column-width;
 }
 
-.cols (@cols: 1, @type: width) when (@type = min-width) {
-  min-width: @cols * @column-width;
+.fixed-cols(@cols: 1, @type: width) {
+  @{type}: @cols * @fixed-grid-column-width * 1px;
 }
 
-.cols (@cols: 1, @type: width) when (@type = max-width) {
-  max-width: @cols * @column-width;
-}
-
-.rows (@rows: 1, @type: min-height) when (@type = min-height) {
-  min-height: @rows * @row-height;
-}
-
-.rows (@rows: 1, @type: min-height) when (@type = height) {
-  height: @rows * @row-height;
-}
-
-.rows (@rows: 1, @type: min-height) when (@type = max-height) {
-  max-height: @rows * @row-height;
+.rows(@rows: 1, @type: min-height) {
+  @{type}: @rows * @row-height;
 }
 
 
 /**
  * Margin and padding
  */
-.hmargin (@guttercount-left: 1, @guttercount-right: 1) {
+.hmargin(@guttercount-left: 1, @guttercount-right: 1) {
   margin-left: @guttercount-left * @column-width;
   margin-right: @guttercount-right * @column-width;
 }
 
-.vmargin (@spacercount-top: 1, @spacercount-bottom: 1) {
+.vmargin(@spacercount-top: 1, @spacercount-bottom: 1) {
   margin-top: @spacercount-top * @row-height;
   margin-bottom: @spacercount-bottom * @row-height;
 }
 
-.hpadding (@padding-left: 1, @padding-right: 1) {
+.hpadding(@padding-left: 1, @padding-right: 1) {
   padding-left: @padding-left * @column-width;
   padding-right: @padding-right * @column-width;
 }
 
-.vpadding (@padding-top: 1, @padding-bottom: 1) {
+.vpadding(@padding-top: 1, @padding-bottom: 1) {
   padding-top: @padding-top * @row-height;
   padding-bottom: @padding-bottom * @row-height;
 }
