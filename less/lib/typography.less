@@ -6,6 +6,7 @@
  * Settings
  */
 @font-size: 16px;  // use for scaling, also used by mediaqueries.less
+@line-height: 1.2 * @font-size;
 
 @default-color: rgb(85, 85, 85);
 @default-font: Helvetica Neue ,Helvetica,Arial,sans-serif;
@@ -37,8 +38,10 @@
  * Typography presets
  */
 body {
+  -webkit-font-smoothing: antialiased;
   font-family: @default-font;
   font-size: @font-size;
+  line-height: @line-height;
 }
 
 a {
