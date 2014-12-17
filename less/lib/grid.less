@@ -8,8 +8,8 @@
 @column-count: 12;
 @column-width: 100% / @column-count;
 @fixed-grid-size: 1200px;
-@fixed-grid-column-count: 12px;
-@fixed-grid-column-width: @fixed-grid-size / @fixed-grid-column-count;
+@fixed-grid-column-count: 12;
+@column-fixed-width: @fixed-grid-size / @fixed-grid-column-count;
 @row-height: 30px;
 
 
@@ -37,7 +37,7 @@
 }
 
 .fixed-cols(@cols: 1, @type: width) {
-  @{type}: @cols * @fixed-grid-column-width * 1px;
+  @{type}: @cols * @column-fixed-width * 1px;
 }
 
 .rows(@rows: 1, @type: min-height) {
@@ -81,14 +81,14 @@
 /**
  * Transformations
  */
-.origin (@h: 50, @v: 50) {
+.origin(@h: 50, @v: 50) {
   transform-origin: @h * 1% @v * 1%;
   -ms-transform-origin: @h * 1% @v * 1%; /* IE 9 */
   -webkit-transform-origin: @h * 1% @v * 1%; /* Safari and Chrome */
   -moz-transform-origin: @h * 1% @v * 1%; /* Firefox */
 }
 
-.rotate (@angle) {
+.rotate(@angle) {
   transform: rotate();
   -ms-transform: rotate(@angle * 1deg); /* IE 9 */
   -moz-transform: rotate(@angle * 1deg); /* Firefox */
